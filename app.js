@@ -125,26 +125,12 @@
     };
   }
 
-  function applyCountryCodeHelper(phoneValue, countryCode) {
-    if (!countryCode) {
-      return phoneValue;
-    }
-
-    const trimmed = phoneValue.trim();
-    const withoutExistingCountryCode = /^\s*(\+|00)/.test(trimmed)
-      ? trimmed.replace(/^\s*(?:\+\s*|00\s*)\d{1,3}\s*/, "").trim()
-      : trimmed;
-
-    return `+${countryCode}${withoutExistingCountryCode ? ` ${withoutExistingCountryCode}` : " "}`;
-  }
-
   function initApp() {
     const locale = getLocale(document.documentElement.lang);
     const messages = getMessages(locale);
     const form = document.querySelector("#linkForm");
     const phoneInput = document.querySelector("#phoneInput");
     const messageInput = document.querySelector("#messageInput");
-    const countryCodeSelect = document.querySelector("#countryCodeSelect");
     const errorBox = document.querySelector("#errorBox");
     const linkOutput = document.querySelector("#linkOutput");
     const copyButton = document.querySelector("#copyButton");
@@ -178,6 +164,13 @@
       openAppLink.href = "#";
       copyButton.textContent = messages.copy;
       setLinksEnabled(false);
+    }
+
+    function resetFields() {
+      form.reset();
+      phoneInput.value = "";
+      messageInput.value = "";
+      clearResult();
     }
 
     function showInvalidResult(message) {
@@ -216,18 +209,9 @@
     form.addEventListener("submit", (event) => event.preventDefault());
     phoneInput.addEventListener("input", updateResult);
     messageInput.addEventListener("input", updateResult);
-
-    if (countryCodeSelect) {
-      countryCodeSelect.addEventListener("change", () => {
-        if (!countryCodeSelect.value) {
-          return;
-        }
-
-        phoneInput.value = applyCountryCodeHelper(phoneInput.value, countryCodeSelect.value);
-        phoneInput.focus();
-        updateResult();
-      });
-    }
+    resetFields();
+    window.setTimeout(resetFields, 0);
+    window.addEventListener("pageshow", resetFields);
 
     copyButton.addEventListener("click", async () => {
       if (!linkOutput.value) {
@@ -257,7 +241,6 @@
   }
 
   const api = {
-    applyCountryCodeHelper,
     buildLinks,
     getLocale,
     getMessages,

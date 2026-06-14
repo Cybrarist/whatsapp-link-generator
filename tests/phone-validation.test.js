@@ -1,6 +1,5 @@
 const assert = require("node:assert/strict");
 const {
-  applyCountryCodeHelper,
   buildLinks,
   getLocale,
   getMessages,
@@ -45,11 +44,5 @@ assert.deepEqual(buildLinks("971501234567", "Hi there"), {
   web: "https://wa.me/971501234567?text=Hi%20there",
   app: "whatsapp://send?phone=971501234567&text=Hi%20there",
 });
-
-assert.equal(applyCountryCodeHelper("", "971"), "+971 ");
-assert.equal(applyCountryCodeHelper("50 123 4567", "971"), "+971 50 123 4567");
-assert.equal(applyCountryCodeHelper("+1 415 555 0100", "44"), "+44 415 555 0100");
-assert.equal(applyCountryCodeHelper("00971 50 123 4567", "966"), "+966 50 123 4567");
-assert.equal(applyCountryCodeHelper("00 971 50 123 4567", "966"), "+966 50 123 4567");
 
 console.log("Phone validation tests passed.");

@@ -43,14 +43,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21YBPL2M4Z"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
+      gtag("config", "G-21YBPL2M4Z");
     </script>
     <script type="application/ld+json">
       {
@@ -73,9 +73,15 @@
   <body class="page-bg">
     <main class="page">
       <section class="app-card">
-        <div class="decor-circle"></div>
-        <div class="decor-label">
-          wa.me
+        <div class="contact-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="1.8" />
+          </svg>
+        </div>
+        <div class="message-bubbles" aria-hidden="true">
+          <span class="message-bubble message-bubble-primary"></span>
+          <span class="message-bubble message-bubble-secondary"></span>
         </div>
         <div class="typing-bubble">
           <span class="chat-dot"></span>
@@ -85,7 +91,10 @@
 
         <header class="app-header">
           <nav class="language-switch" aria-label="Language">
-            <a href="ar/" lang="ar" dir="rtl">العربية</a>
+            <a href="ar/" lang="ar" dir="rtl">
+              <span aria-hidden="true">🇦🇪</span>
+              <span>العربية</span>
+            </a>
           </nav>
 
           <div class="logo">
@@ -111,7 +120,7 @@
           </h1>
         </header>
 
-        <form id="linkForm" class="link-form">
+        <form id="linkForm" class="link-form" autocomplete="off">
           <label class="field">
             <span class="field-label">Phone number</span>
             <div class="input-wrap">
@@ -123,27 +132,9 @@
                 class="focus-ring text-input"
                 type="tel"
                 inputmode="tel"
-                autocomplete="tel"
+                autocomplete="off"
                 placeholder="+971 50 123 4567"
               />
-            </div>
-          </label>
-
-          <label class="field">
-            <span class="field-label">Country code helper</span>
-            <div class="select-wrap">
-              <select id="countryCodeSelect" class="focus-ring country-select" aria-label="Country code helper">
-                <option value="">Choose a common country code</option>
-                <option value="971">United Arab Emirates (+971)</option>
-                <option value="1">United States / Canada (+1)</option>
-                <option value="44">United Kingdom (+44)</option>
-                <option value="966">Saudi Arabia (+966)</option>
-                <option value="91">India (+91)</option>
-                <option value="20">Egypt (+20)</option>
-                <option value="33">France (+33)</option>
-                <option value="49">Germany (+49)</option>
-                <option value="61">Australia (+61)</option>
-              </select>
             </div>
           </label>
 
@@ -156,6 +147,7 @@
               <textarea
                 id="messageInput"
                 class="focus-ring message-input"
+                autocomplete="off"
                 placeholder="Hi, I would like to chat."
               ></textarea>
             </div>
@@ -163,6 +155,7 @@
         </form>
 
         <p class="privacy-note">
+          <strong>Private by design.</strong>
           Phone numbers and messages are processed in your browser only.
         </p>
 
