@@ -42,7 +42,6 @@ assert.equal(validatePhoneNumber("+971A501234567", "ar").error, getMessages("ar"
 
 assert.deepEqual(buildLinks("971501234567", "Hi there"), {
   web: "https://wa.me/971501234567?text=Hi%20there",
-  app: "whatsapp://send?phone=971501234567&text=Hi%20there",
 });
 
 console.log("Phone validation tests passed.");

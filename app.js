@@ -121,7 +121,6 @@
 
     return {
       web: `https://wa.me/${phoneNumber}${messageParam}`,
-      app: `whatsapp://send?phone=${phoneNumber}${encodedMessage ? `&text=${encodedMessage}` : ""}`,
     };
   }
 
@@ -135,9 +134,8 @@
     const linkOutput = document.querySelector("#linkOutput");
     const copyButton = document.querySelector("#copyButton");
     const openWebLink = document.querySelector("#openWebLink");
-    const openAppLink = document.querySelector("#openAppLink");
 
-    if (!form || !phoneInput || !messageInput || !errorBox || !linkOutput || !copyButton || !openWebLink || !openAppLink) {
+    if (!form || !phoneInput || !messageInput || !errorBox || !linkOutput || !copyButton || !openWebLink) {
       return;
     }
 
@@ -154,14 +152,12 @@
     function setLinksEnabled(enabled) {
       copyButton.disabled = !enabled;
       openWebLink.classList.toggle("is-disabled", !enabled);
-      openAppLink.classList.toggle("is-disabled", !enabled);
     }
 
     function clearResult() {
       hideError();
       linkOutput.value = "";
       openWebLink.href = "#";
-      openAppLink.href = "#";
       copyButton.textContent = messages.copy;
       setLinksEnabled(false);
     }
@@ -177,7 +173,6 @@
       showError(message);
       linkOutput.value = "";
       openWebLink.href = "#";
-      openAppLink.href = "#";
       copyButton.textContent = messages.copy;
       setLinksEnabled(false);
     }
@@ -201,7 +196,6 @@
       hideError();
       linkOutput.value = links.web;
       openWebLink.href = links.web;
-      openAppLink.href = links.app;
       copyButton.textContent = messages.copy;
       setLinksEnabled(true);
     }
