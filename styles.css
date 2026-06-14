@@ -81,7 +81,6 @@ a {
   mask-image: linear-gradient(to bottom, black, transparent 70%);
 }
 
-.contact-badge,
 .message-bubbles,
 .typing-bubble {
   display: none;
@@ -433,31 +432,10 @@ html[dir="rtl"] textarea {
     font-size: 1.875rem;
   }
 
-  .contact-badge,
   .message-bubbles,
   .typing-bubble {
     position: absolute;
     pointer-events: none;
-  }
-
-  .contact-badge {
-    inset-inline-end: 1.25rem;
-    top: 1.25rem;
-    display: flex;
-    width: 3rem;
-    height: 3rem;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #bbf7d0;
-    border-radius: 999px;
-    background: #f0fdf4;
-    color: var(--green-deep);
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
-  }
-
-  .contact-badge svg {
-    width: 1.55rem;
-    height: 1.55rem;
   }
 
   .message-bubbles {
