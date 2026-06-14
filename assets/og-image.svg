@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">WhatsApp Link Generator</title>
+  <desc id="desc">A social preview image for a WhatsApp wa.me link generator.</desc>
+  <rect width="1200" height="630" fill="#f8fafc"/>
+  <circle cx="1040" cy="112" r="190" fill="#dcf8c6"/>
+  <circle cx="92" cy="548" r="180" fill="#d1fae5"/>
+  <rect x="96" y="82" width="1008" height="466" rx="32" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="156" y="154" width="112" height="112" rx="28" fill="#25d366"/>
+  <path d="M190 237l6.6-20.6a41.4 41.4 0 1 1 17.3 15.6L190 237z" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M208 179c2 18 12.3 29 32 33.5" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <text x="304" y="198" fill="#128c4a" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="0">WHATSAPP LINK GENERATOR</text>
+  <text x="156" y="356" fill="#020617" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="0">Create direct chat links</text>
+  <text x="160" y="424" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="0">Paste a phone number, add a message, copy a wa.me link.</text>
+  <rect x="160" y="472" width="412" height="54" rx="12" fill="#25d366"/>
+  <text x="188" y="508" fill="#020617" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="0">https://wa.me/971501234567</text>
+</svg>
