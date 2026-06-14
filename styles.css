@@ -257,6 +257,11 @@ html[dir="rtl"] textarea {
   text-align: right;
 }
 
+html[dir="rtl"] #phoneInput {
+  padding-inline-start: 1rem;
+  padding-inline-end: 2.5rem;
+}
+
 .error-box {
   margin-top: 0.75rem;
   padding: 0.5rem 0.75rem;
