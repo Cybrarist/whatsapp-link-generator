@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhatsApp Link Generator - Create wa.me Links from Phone Numbers</title>
+    <title>WhatsApp Link Generator | From Phone Number to Link</title>
     <meta
       name="description"
-      content="Free WhatsApp link generator to create wa.me chat links from any  phone number. Paste a number, add an optional message, and open WhatsApp instantly."
+      content="Generate a WhatsApp link from any phone number. No data stored — everything runs privately in your browser."
     />
     <meta
       name="keywords"
@@ -68,10 +68,90 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a WhatsApp Link Generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A WhatsApp link generator is a free tool that creates a direct chat link, also called a wa.me link, from any phone number. Instead of asking someone to save your number first, you share the link and they are taken straight into a WhatsApp chat with you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to Create a WhatsApp Link",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter your phone number with your country code, add an optional pre-filled message, then copy your generated wa.me link or click Open WhatsApp to test it instantly. No signup is required, no data is stored, and it works on any device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a wa.me Link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A wa.me link is WhatsApp's official short link format. When someone clicks it, WhatsApp opens directly to a chat with that number without needing to save the contact first. You can also include a pre-filled message."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this WhatsApp link generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, completely free with no limits, no ads, and no signup required. Just enter your number and generate your link instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my phone number stored anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Everything is processed locally in your browser only. Your phone number and message are never sent to or stored on any server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the person need to save my number to use the link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. That is the whole point. When someone clicks your wa.me link, WhatsApp opens directly into a chat with you, with no contact saving needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I add a pre-filled message to my WhatsApp link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Type your message in the Optional message field before generating your link. The recipient will see it pre-filled in the chat box when they click your link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this work for WhatsApp Business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. WhatsApp links work the same way for both regular WhatsApp and WhatsApp Business accounts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which countries are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All countries are supported. Just make sure to include your full country code when entering your phone number, such as +1 for USA, +44 for UK, or +971 for UAE."
+            }
+          }
+        ]
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="page-bg">
-    <main class="page">
+    <main class="page page-with-content">
       <section class="app-card">
         <div class="message-bubbles" aria-hidden="true">
           <span class="message-bubble message-bubble-primary"></span>
@@ -106,17 +186,15 @@
               />
             </svg>
           </div>
-          <p class="eyebrow">
-            WhatsApp Link Creator
-          </p>
           <h1>
-            Create a direct chat link
+            WhatsApp Link Generator
           </h1>
+          <p class="subhead">Create a direct chat link in seconds</p>
         </header>
 
         <form id="linkForm" class="link-form" autocomplete="off">
-          <label class="field">
-            <span class="field-label">Phone number</span>
+          <div class="field">
+            <label class="field-label" for="phoneInput">Phone number</label>
             <div class="input-wrap">
               <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.6.5 2.5.6a2 2 0 0 1 1.7 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
@@ -127,10 +205,11 @@
                 type="tel"
                 inputmode="tel"
                 autocomplete="off"
+                autofocus
                 placeholder="+971 50 123 4567"
               />
             </div>
-          </label>
+          </div>
 
           <label class="field">
             <span class="field-label">Optional message</span>
@@ -216,6 +295,89 @@
             GitHub
           </a>
         </footer>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <h2 id="faq-title">WhatsApp Link Generator FAQ</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is a WhatsApp Link Generator?</summary>
+            <div class="faq-content">
+              <p>
+                A WhatsApp link generator is a free tool that creates a direct chat link (wa.me link) from any phone number. Instead of asking someone to save your number first, you simply share the link, and they are taken straight into a WhatsApp chat with you. It is used by businesses, freelancers, and content creators who want to make it as easy as possible for people to reach them on WhatsApp.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How to Create a WhatsApp Link</summary>
+            <div class="faq-content">
+              <p>Creating a WhatsApp link takes less than 10 seconds:</p>
+              <ol>
+                <li>Enter your phone number with your country code (e.g. +971 for UAE)</li>
+                <li>Add an optional pre-filled message your contact will see when they open the chat</li>
+                <li>Copy your generated wa.me link or click "Open WhatsApp" to test it instantly</li>
+              </ol>
+              <p>No signup required. No data stored. Works on any device.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is a wa.me Link?</summary>
+            <div class="faq-content">
+              <p>
+                A wa.me link is WhatsApp's official short link format. When someone clicks it, WhatsApp opens directly to a chat with that number, without needing to save the contact first. You can also include a pre-filled message that appears in the chat box automatically.
+              </p>
+              <div class="example-links" aria-label="wa.me link examples">
+                <a href="https://wa.me/971501234567" target="_blank" rel="noopener">https://wa.me/971501234567</a>
+                <a href="https://wa.me/971501234567?text=Hi%2C%20I%20would%20like%20to%20chat" target="_blank" rel="noopener">https://wa.me/971501234567?text=Hi%2C%20I%20would%20like%20to%20chat</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is this WhatsApp link generator free?</summary>
+            <div class="faq-content">
+              <p>Yes, completely free with no limits, no ads, and no signup required. Just enter your number and generate your link instantly.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is my phone number stored anywhere?</summary>
+            <div class="faq-content">
+              <p>No. Everything is processed locally in your browser only. Your phone number and message are never sent to or stored on any server.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does the person need to save my number to use the link?</summary>
+            <div class="faq-content">
+              <p>No. That is the whole point. When someone clicks your wa.me link, WhatsApp opens directly into a chat with you, with no contact saving needed.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I add a pre-filled message to my WhatsApp link?</summary>
+            <div class="faq-content">
+              <p>Yes. Type your message in the "Optional message" field before generating your link. The recipient will see it pre-filled in the chat box when they click your link.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does this work for WhatsApp Business?</summary>
+            <div class="faq-content">
+              <p>Yes. WhatsApp links work the same way for both regular WhatsApp and WhatsApp Business accounts.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Which countries are supported?</summary>
+            <div class="faq-content">
+              <p>All countries are supported. Just make sure to include your full country code when entering your phone number (e.g. +1 for USA, +44 for UK, +971 for UAE).</p>
+            </div>
+          </details>
+        </div>
       </section>
     </main>
 

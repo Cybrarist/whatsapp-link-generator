@@ -223,6 +223,101 @@
     });
   }
 
+  function initFaqAccordion() {
+    const faqItems = Array.from(document.querySelectorAll(".faq-item"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const animationOptions = {
+      duration: 240,
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+    };
+
+    function setItemOpen(item, shouldOpen) {
+      const content = item.querySelector(".faq-content");
+
+      if (!content || item.classList.contains("is-expanded") === shouldOpen) {
+        return;
+      }
+
+      const currentHeight = content.getBoundingClientRect().height;
+      const currentOpacity = Number(getComputedStyle(content).opacity);
+
+      if (content.accordionAnimation) {
+        content.accordionAnimation.cancel();
+        content.accordionAnimation = null;
+      }
+
+      if (reduceMotion.matches) {
+        item.open = shouldOpen;
+        item.classList.toggle("is-expanded", shouldOpen);
+        content.style.height = shouldOpen ? "auto" : "0px";
+        content.style.opacity = shouldOpen ? "1" : "0";
+        return;
+      }
+
+      if (shouldOpen) {
+        item.open = true;
+        item.classList.add("is-expanded");
+      } else {
+        item.classList.remove("is-expanded");
+      }
+
+      const startHeight = currentHeight;
+      const endHeight = shouldOpen ? content.scrollHeight : 0;
+
+      content.style.height = `${startHeight}px`;
+      content.style.opacity = `${currentOpacity}`;
+
+      const animation = content.animate(
+        [
+          { height: `${startHeight}px`, opacity: currentOpacity },
+          { height: `${endHeight}px`, opacity: shouldOpen ? 1 : 0 },
+        ],
+        animationOptions,
+      );
+
+      content.accordionAnimation = animation;
+
+      animation.onfinish = () => {
+        if (!shouldOpen) {
+          item.open = false;
+        }
+
+        content.style.height = shouldOpen ? "auto" : "0px";
+        content.style.opacity = shouldOpen ? "1" : "0";
+        content.accordionAnimation = null;
+      };
+
+      animation.oncancel = () => {
+        content.accordionAnimation = null;
+      };
+    }
+
+    faqItems.forEach((item) => {
+      const summary = item.querySelector("summary");
+
+      if (!summary) {
+        return;
+      }
+
+      summary.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        if (item.classList.contains("is-expanded")) {
+          setItemOpen(item, false);
+          return;
+        }
+
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            setItemOpen(otherItem, false);
+          }
+        });
+
+        setItemOpen(item, true);
+      });
+    });
+  }
+
   function registerServiceWorker() {
     const isSupported = "serviceWorker" in navigator;
     const isValidOrigin = location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1";
@@ -239,6 +334,7 @@
     getLocale,
     getMessages,
     initApp,
+    initFaqAccordion,
     normalizePhoneNumber,
     registerServiceWorker,
     validatePhoneNumber,
@@ -250,6 +346,7 @@
     root.WhatsAppLinkGenerator = api;
     document.addEventListener("DOMContentLoaded", () => {
       initApp();
+      initFaqAccordion();
       registerServiceWorker();
     });
   }
